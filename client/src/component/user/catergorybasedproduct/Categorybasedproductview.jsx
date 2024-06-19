@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../navbar/Navbar';
 
 
 function Categorybasedproductview() {
@@ -25,6 +26,7 @@ function Categorybasedproductview() {
 
     return (
         <div>
+            <Navbar/>
             {products.length > 0 ? (
                 <>
                     <h2>{products[0]?.category_id?.category}</h2>

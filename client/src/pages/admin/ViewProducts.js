@@ -22,7 +22,7 @@ function ViewProducts() {
                 <div id="wrapper" className={`wrapper-content ${isToggled ? 'toggled' : ''}`}>
                     <div id="sidebar-wrapper">
                     <ul className="sidebar-nav mb-4">
-                            <li className="sidebar-brand " ><a href="#">coffee</a></li>
+                            <li className="sidebar-brand " ><a href="#"><img src='./image/coffee-7057030_1280.webp' ait='imag' style={{height:'50px'}}/>coffee</a></li>
                             <li><Link className='nav-link ' as={Link} to="/admin">Dashboard</Link></li>
                             <li> <Link className='nav-link ' as={Link} to="/addproduct">Add products</Link></li>
                             <li> <Link className='nav-link ' as={Link} to="/viewproducts">view AddProduct</Link></li>   

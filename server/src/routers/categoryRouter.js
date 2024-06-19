@@ -1,5 +1,6 @@
 const express = require('express')
 const categoryModel = require('../models/categoryModel')
+const productModel = require('../models/productModel')
 const categoryRouter = express.Router()
 
 
@@ -66,6 +67,35 @@ categoryRouter.get('/viewcategory', async function (req, res) {
         })
     }
 
+})
+
+
+categoryRouter.get('/viewcategory/:id', async function (req, res) {
+    
+    try {
+        const categoryId = req.params.id;
+        const products = await productModel.find({ category_id: categoryId }).populate('category_id');
+
+        if (products && products.length > 0) {
+            return res.status(200).json({
+                success: true,
+                error: false,
+                data: products,
+            });
+        } else {
+            return res.status(404).json({
+                success: false,
+                error: true,
+                message: "No products found for this category",
+            });
+        }
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: true,
+            message: "Something went wrong",
+        });
+    }
 })
 
 

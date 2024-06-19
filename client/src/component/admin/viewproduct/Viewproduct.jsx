@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './addproduct.css'
 import axios from 'axios'
 import { CartContext } from '../../../contextapi/CartContext'
+import Category from '../../user/catergory/Category'
 
 
 
@@ -107,7 +108,10 @@ export default function Viewproduct() {
     return (
 
         <>
-           
+        {(role==0)? null:
+             <Category/>
+        }
+          
             <div className='product-grid'>
                 {products.length > 0 ? (
                     products.map((product) => (
@@ -120,7 +124,7 @@ export default function Viewproduct() {
                                 <h3 className='price'>Price: {product.price} {product.availability ? 'Available' : 'Not Available'}</h3>
                             </p>
 
-                            {role == 1 ? (
+                            {role == 0 ? (
                                 <>
                                     <button className='button1' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => handleEdit(product)}>Update</button>
                                     <button className='button2' onClick={() => handleDelete(product._id)}>Delete</button>

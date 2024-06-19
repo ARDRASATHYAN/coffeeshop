@@ -21,6 +21,7 @@ import Thankyou from './component/user/thankupage/Thankyou';
 import Orderstatus from './component/user/orderstatuscheck/Orderstatus';
 import CheckOrders from './pages/admin/CheckOrders';
 import Viewproducts from './pages/user/Viewproducts';
+import Categorybasedproductview from './component/user/catergorybasedproduct/Categorybasedproductview';
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path='/viewproduct' element={<Viewproduct/>} />
           <Route path='/viewproductes' element={<Viewproducts/>} />
           <Route path='/viewproducts/:id' element={<Singleproduct />} />
+          <Route path='/categoryproduct/:id' element={<Categorybasedproductview/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path="/search" element={<Searchpage />} />
           <Route path="/order-confirmation/:userId" element={<Orderconformation />} /> 

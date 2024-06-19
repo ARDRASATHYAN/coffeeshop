@@ -6,13 +6,8 @@ import axios from 'axios';
 
 
 function Navbar() {
-  const [searchCategory, setSearchCategory] = useState('');
   const [searchProductName, setSearchProductName] = useState('');
   const navigate = useNavigate();
-
-  const handleCategoryChange = (event) => {
-    setSearchCategory(event.target.value);
-  };
 
   const handleProductNameChange = (event) => {
     setSearchProductName(event.target.value);
@@ -20,15 +15,11 @@ function Navbar() {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    const queryParams = new URLSearchParams();
-    if (searchCategory.trim()) {
-      queryParams.append('categoryId', searchCategory);
-    }
     if (searchProductName.trim()) {
-      queryParams.append('productName', searchProductName);
+      navigate(`/search?productName=${searchProductName}`);
     }
-    navigate(`/search?${queryParams.toString()}`);
   };
+
   const logout = ()=>{
     localStorage.removeItem('role')
     localStorage.removeItem('u_login_id')
@@ -80,19 +71,18 @@ function Navbar() {
                   <Link className='nav-link' to="/login">Login</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className='nav-link' onClick={logout}>Logout</Link>
+                  <a className='nav-link' onClick={logout}>Logout</a>
                 </li>
               </ul>
               <form className="d-flex" onSubmit={handleSearchSubmit}>
                 <input
                   className="form-control me-2"
                   type="search"
-                  placeholder="Category"
-                  aria-label="Category"
-                  value={searchCategory}
-                  onChange={handleCategoryChange}
+                  placeholder="Search here"
+                  aria-label="Search"
+                  value={searchProductName}
+                  onChange={handleProductNameChange}
                 />
-
                 <button className="btn btn-outline-success" type="submit">Search</button>
               </form>
             </div>

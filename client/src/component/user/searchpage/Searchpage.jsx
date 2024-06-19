@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import './Productdetails.css'
 import { CartContext } from '../../../contextapi/CartContext';
+import Navbar from '../navbar/Navbar';
 
 
 function useQuery() {
@@ -19,25 +20,28 @@ function Searchpage() {
     const [loading, setLoading] = useState(true);
     const { addToCart } = useContext(CartContext);
   console.log('ss',searchResults);
-    useEffect(() => {
-      const fetchResults = async () => {
-        setLoading(true);
-        try {
-          const response = await axios.get('http://localhost:4000/search/search', {
-            params: { productName }
-          });
-          setSearchResults(response.data);
-          setLoading(false);
-        } catch (error) {
-          console.error('Error fetching search results:', error);
-          setLoading(false);
-        }
-      };
+
+
   
-      if (productName || categoryId) {
-        fetchResults();
+  useEffect(() => {
+    const fetchResults = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('http://localhost:4000/search/search', {
+          params: { productName }
+        });
+        setSearchResults(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+        setLoading(false);
       }
-    }, [productName, categoryId]);
+    };
+
+    if (productName) {
+      fetchResults();
+    }
+  }, [productName]);
 
     const handleAddToCart = async (product) => {
         const cartItem = {
@@ -58,6 +62,7 @@ function Searchpage() {
       
   return (
     <div>
+    <Navbar/>
       <h2>Search Results</h2>
       {loading && <p>Loading...</p>}
       {!loading && searchResults.length === 0 && <p>No results found for your search criteria.</p>}

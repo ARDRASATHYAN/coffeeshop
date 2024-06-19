@@ -34,7 +34,7 @@ function Navbar() {
       <header className="top-header">
         <nav className="navbar header-nav navbar-expand-lg" style={{ boxShadow: '-moz-initial' }}>
           <div className="container">
-            <img src="/image/logo.jpg"  alt="VE Logo" style={{height:'50px'}} />
+            <img src="/image/coffee-7057030_1280.webp"  alt="VE Logo" style={{height:'50px'}} />
           <h1>coffee</h1>
             <button
               className="navbar-toggler"

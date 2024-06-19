@@ -25,6 +25,8 @@ import Categorybasedproductview from './component/user/catergorybasedproduct/Cat
 
 
 
+
+
 function App() {
   return (
     <div className="App">
@@ -51,7 +53,7 @@ function App() {
           <Route path="/thank-you" element={<Thankyou />} />
           <Route path="/orderstatus" element={<Orderstatus />} />
         </Routes>
-       
+    
       </BrowserRouter>
     </div>
   );

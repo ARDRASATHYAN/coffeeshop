@@ -112,7 +112,7 @@ export default function Viewproduct() {
              <Category/>
         }
           
-            <div className='product-grid'>
+            <div className='product-grid mb-4'>
                 {products.length > 0 ? (
                     products.map((product) => (
                         <div className='product' key={product._id}>

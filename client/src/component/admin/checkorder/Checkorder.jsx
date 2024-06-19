@@ -75,19 +75,19 @@ function Checkorder() {
                                                     <a href="#" className="table-link text-warning" onClick={() => updateOrderStatus(order._id, 'Processing')}>
                                                         <span className="fa-stack">
                                                             <i className="fa fa-square fa-stack-2x"></i>
-                                                            <i className="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                            <i className="fa fa-spinner fa-stack-1x fa-inverse"></i>
                                                         </span>
                                                     </a>
                                                     <a href="#" className="table-link text-info" onClick={() => updateOrderStatus(order._id, 'completed')}>
                                                         <span className="fa-stack">
                                                             <i className="fa fa-square fa-stack-2x"></i>
-                                                            <i className="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                            <i className="fa fa-check fa-stack-1x fa-inverse"></i>
                                                         </span>
                                                     </a>
                                                     <a href="#" className="table-link danger" onClick={() => updateOrderStatus(order._id, 'canceled')}>
                                                         <span className="fa-stack">
                                                             <i className="fa fa-square fa-stack-2x"></i>
-                                                            <i className="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                            <i className="fa fa-times fa-stack-1x fa-inverse"></i>
                                                         </span>
                                                     </a>
                                                 </td>

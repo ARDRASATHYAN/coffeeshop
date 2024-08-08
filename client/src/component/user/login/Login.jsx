@@ -95,7 +95,7 @@ function Login() {
     <>
       <Navbar />
       <div className="register-container" style={{ marginTop: '20px' }}>
-        <h2 className="register-title">Register</h2>
+        <h2 className="register-title">LOGIN</h2>
         <form onSubmit={validation} className="register-form">
           <div className="form-floating mb-3">
 
@@ -103,7 +103,7 @@ function Login() {
               type="text"
               class="form-control"
               name="username"
-
+placeholder='username'
               onChange={inputchange}
 
             />
@@ -118,7 +118,7 @@ function Login() {
               type="password"
               class="form-control"
               name="password"
-
+placeholder='password'
               onChange={inputchange}
               minLength="6"
 
@@ -128,7 +128,7 @@ function Login() {
           </div>
 
 
-          <button type="submit" className="submit-button">Register</button>
+          <button type="submit" className="submit-button">LOGIN</button>
         </form>
       </div>
     </>

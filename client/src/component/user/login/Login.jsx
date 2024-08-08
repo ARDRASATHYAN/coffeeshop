@@ -95,7 +95,7 @@ function Login() {
     <>
       <Navbar />
       <div className="register-container" style={{ marginTop: '20px' }}>
-        <h2 className="register-title">LOGIN</h2>
+        <h2 className="register-title">SIGN IN</h2>
         <form onSubmit={validation} className="register-form">
           <div className="form-floating mb-3">
 

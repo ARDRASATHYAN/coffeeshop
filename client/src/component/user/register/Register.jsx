@@ -93,7 +93,7 @@ const navigate=useNavigate()
     <>
       <Navbar />
       <div className="register-container " style={{ marginTop: '20px' }}>
-        <h2 className="register-title">SIGN OUT</h2>
+        <h2 className="register-title">SIGNOUT</h2>
         <form onSubmit={validation} className="register-form">
           <div className="form-floating mb-3">
           

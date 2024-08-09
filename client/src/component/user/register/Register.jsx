@@ -93,53 +93,57 @@ const navigate=useNavigate()
     <>
       <Navbar />
       <div className="register-container " style={{ marginTop: '20px' }}>
-        <h2 className="register-title">Register</h2>
+        <h2 className="register-title">SIGNOUT</h2>
         <form onSubmit={validation} className="register-form">
           <div className="form-floating mb-3">
-            <label className="form-label">Username</label>
+          
             <input
               type="text"
               class="form-control"
               name="username"
-
+              placeholder="username"
               onChange={inputchange}
               required
             />
+              <label className="form-label">username</label>
           </div>
           <div className="form-floating mb-3">
-            <label className="form-label">Email address</label>
+          
             <input
               type="email"
               class="form-control"
               name="email"
-
+placeholder='email'
               onChange={inputchange}
               required
             />
+              <label className="form-label">Email address</label>
           </div>
           <div className="form-floating mb-3">
-            <label className="form-label">Password</label>
+          
             <input
               type="password"
               class="form-control"
               name="password"
-
+placeholder='password'
               onChange={inputchange}
               minLength="6"
               required
             />
+              <label className="form-label">Password</label>
           </div>
           <div className="form-floating mb-3">
-            <label className="form-label">Confirm Password</label>
+          
             <input
               type="password"
               class="form-control"
               name="confirm_password"
-
+placeholder='Confirm Password'
               onChange={inputchange}
               minLength="6"
               required
             />
+              <label className="form-label">Confirm Password</label>
           </div>
           <button type="submit" className="submit-button">Register</button>
         </form>
